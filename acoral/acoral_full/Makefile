@@ -38,7 +38,7 @@ do-it-all: 	acoral
 # Include the make variables (CC, etc...)
 #
 
-CROSS_COMPILE   =/home/lovelife/software/PB11_ARM/cross_tool/g++_arm_none_eabi/bin/arm-none-eabi-
+CROSS_COMPILE   =/opt/gcc-3.4.5-glibc-2.3.6/bin/arm-linux-
 #CROSS_COMPILE  =
 
 AS              = $(CROSS_COMPILE)as
@@ -108,6 +108,7 @@ config:
 menuconfig:
 	$(MAKE) -C tools/scripts/lxdialog all
 	$(CONFIG_SHELL) tools/scripts/Menuconfig cfg.in
+#  cfg.in just like the Kconfig file
 
 clean:
 	find . \( -name '*.o' -o -name core -o -name ".*.flags" \) -type f -print \
